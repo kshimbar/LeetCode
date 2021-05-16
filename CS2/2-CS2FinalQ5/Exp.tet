@@ -1,0 +1,9 @@
+For this problem, I want yout ro write a recursive function that will find the lowest cost path across a 2D array.
+(This is like a maze problem but with no walls, just costs.)
+The method takes a 2D array of integers that give the cost of each square.
+It also takes x:Int and y:Int for the square it is currently on.
+The destination for the path is always (0,0).
+All the values in the array will be positive.
+Don't worry about any optimizations. You can use the array itself to hold bread crumbs.
+
+def lowestCost(a:Array[Array[Int]],x:Int,y:Int):Int = ???

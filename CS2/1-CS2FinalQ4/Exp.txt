@@ -1,0 +1,7 @@
+Assuming the node class in the provided code, complete the two methods of the tree to calculate the height and size respectively.
+
+private class Node(var key:A, data:B, left:Node, right:Node)
+
+private def height(n:Node):Int = ???
+
+private def size(n:Node):Int = ???

@@ -1,0 +1,19 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/kohta/PracticeCodes/LeetCode/Easy/target/scala-2.12/easy_2.12-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test1[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kohta/PracticeCodes/LeetCode/Easy/target/scala-2.12/classes/test1[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test1/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kohta/PracticeCodes/LeetCode/Easy/target/scala-2.12/classes/test1/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test1/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kohta/PracticeCodes/LeetCode/Easy/target/scala-2.12/classes/test1/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test1/Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kohta/PracticeCodes/LeetCode/Easy/target/scala-2.12/classes/test1/Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test2[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kohta/PracticeCodes/LeetCode/Easy/target/scala-2.12/classes/test2[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test2/Mai$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kohta/PracticeCodes/LeetCode/Easy/target/scala-2.12/classes/test2/Mai$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test2/Mai$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kohta/PracticeCodes/LeetCode/Easy/target/scala-2.12/classes/test2/Mai$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test2/Mai.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/kohta/PracticeCodes/LeetCode/Easy/target/scala-2.12/classes/test2/Mai.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

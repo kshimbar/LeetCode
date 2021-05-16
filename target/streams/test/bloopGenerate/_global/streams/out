@@ -1,0 +1,4 @@
+[debug] [practicecodes-test] Classpath dependencies List()
+[debug] [practicecodes-test] Dependencies from configurations List(practicecodes)
+[debug] Bloop wrote the configuration of project 'practicecodes-test' to '/Users/kohta/PracticeCodes/.bloop/practicecodes-test.json'
+[success] Generated .bloop/practicecodes-test.json

@@ -20,7 +20,7 @@ object Main extends App{
             println("There is no such a pair.")
         }
     }
-
+    //test compleated
     def validParentheses(str:String):Unit = {
         var prentheses = 0
         var curlyBrackets = 0
@@ -49,7 +49,7 @@ object Main extends App{
             println("invalid input")
         }
     }
-    //Test space.
-    
+    //Test space
+
 }
 

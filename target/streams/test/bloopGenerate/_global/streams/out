@@ -1,4 +1,4 @@
-[debug] [practicecodes-test] Classpath dependencies List()
-[debug] [practicecodes-test] Dependencies from configurations List(practicecodes)
-[debug] Bloop wrote the configuration of project 'practicecodes-test' to '/Users/kohta/PracticeCodes/.bloop/practicecodes-test.json'
-[success] Generated .bloop/practicecodes-test.json
+[debug] [leetcode-test] Classpath dependencies List()
+[debug] [leetcode-test] Dependencies from configurations List(leetcode)
+[debug] Bloop wrote the configuration of project 'leetcode-test' to '/Users/kohta/LeetCode/.bloop/leetcode-test.json'
+[success] Generated .bloop/leetcode-test.json

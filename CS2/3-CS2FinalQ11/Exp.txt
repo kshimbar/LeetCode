@@ -1,1 +1,0 @@
-Low cost without recursion

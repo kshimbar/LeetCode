@@ -1,6 +1,7 @@
 package leetCode
 
 object Main extends App{
+
     //Test compleated.
     def twoSum(nums: Array[Int], target: Int): Unit = {
         var i = 0
@@ -20,6 +21,7 @@ object Main extends App{
             println("There is no such a pair.")
         }
     }
+
     //test compleated
     def validParentheses(str:String):Unit = {
         var prentheses = 0
@@ -50,6 +52,6 @@ object Main extends App{
         }
     }
     //Test space
-
+    
 }
 

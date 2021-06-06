@@ -8,3 +8,7 @@ Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
 An input string is valid if:
 Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
+
+Q3 Reverse Integer:Easy
+Given a signed 32-bit integer x, return x with its digits reversed.
+If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.

@@ -51,7 +51,66 @@ object Main extends App{
             println("invalid input")
         }
     }
+
+    def rti(s:String):Int = {
+        var ret = 0
+        if(s == "I"){
+            ret = 1
+        }else if(s == "V"){
+            ret = 5
+        }else if(s == "X"){
+            ret = 10
+        }else if(s == "L"){
+            ret = 50
+        }else if(s == "C"){
+            ret = 100
+        }else if(s == "D"){
+            ret = 500
+        }else if(s == "M"){
+            ret = 1000
+        }
+        ret
+    }
+
+    def romanToInt(s:String):Int = {
+        val arrString = s.split("")
+        var i = 0
+        var total = 0
+        if(arrString.length == 1){
+            total = rti(arrString(0))
+        }else{
+            while(i < arrString.length - 1){
+                var cur = rti(arrString(i))
+                var next = rti(arrString(i + 1))
+                total = total + cur
+                if(cur < next){
+                    println("check")
+                    var minus = rti(arrString(i))
+                    if(i == 0){
+                        minus = rti(arrString(0))
+                    }else{
+                        var now = rti(arrString(i))
+                        var pre = rti(arrString(i - 1))
+                        var n = i - 1
+                        while(now >= pre && n >= 0){
+                            now = pre
+                            if(n > 0){
+                                pre = rti(arrString(n - 1))
+                            }
+                            n = n - 1
+                            minus = minus + now
+                        }
+                    }
+                    total = total - minus - minus
+                }
+                i = i + 1
+            }
+            total = total + rti(arrString(arrString.length - 1))
+        }
+        total
+    }
     //Test space
-    
+    println(romanToInt("MMXLIIX"))
 }
+    
 

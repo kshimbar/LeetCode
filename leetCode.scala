@@ -72,6 +72,7 @@ object Main extends App{
         ret
     }
 
+    //test conleated
     def romanToInt(s:String):Int = {
         val arrString = s.split("")
         var i = 0
@@ -110,7 +111,7 @@ object Main extends App{
         total
     }
     //Test space
-    println(romanToInt("MMXLIIX"))
+    
 }
     
 

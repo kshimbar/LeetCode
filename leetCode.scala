@@ -1,7 +1,49 @@
 package leetCode
 
-object Main extends App{
+import java.io.PrintWriter
+import javax.xml.transform.Source
 
+object Main extends App{
+    
+    def problemset():Unit = {
+        val filename = "solved.txt"
+        var solvedArray:Array[Int] = Array.fill(100)(-1)
+        for(line <- scala.io.Source.fromFile(filename).getLines()){
+            var solved = line.split(" ")
+            var i = 0
+            while(i < solved.length){
+                solvedArray(i) = solved(i).toInt
+                i = i + 1
+            }
+        }
+        var count = 0
+        for(z <- 0 to solvedArray.length - 1){
+            if(solvedArray(z) != -1){
+                count = count + 1
+            }
+        }
+        var problemN = util.Random.nextInt(100)
+        println(problemN)
+        if(count >= 100){
+            println("You did 100 questions!! Well done!!")
+        }else{
+            if(solvedArray.contains(problemN)){
+                while(solvedArray.contains(problemN)){
+                    problemN = util.Random.nextInt(100)
+                }
+            }
+            println("The problem you will solve next is " + problemN)
+            val pw = new PrintWriter("solved.txt")
+            for(i <- 0 to solvedArray.length - 1){
+                if(solvedArray(i) != -1){
+                    pw.print(solvedArray(i) + " ")
+                }
+            }
+            pw.print(problemN)
+            pw.close()
+            pw.flush()
+        }
+    }
     //Test compleated.
     def twoSum(nums: Array[Int], target: Int): Unit = {
         var i = 0
@@ -131,8 +173,18 @@ object Main extends App{
             }
         }
     }
+
+    def isPowerOfThree(n:Int): Boolean = {
+        if(n == 3){
+            true
+        }else if(n % 3 != 0){
+            false
+        }else{
+            isPowerOfThree(n/3)
+        }
+    }
     //Test space
-    
+    problemset()
 }
     
 

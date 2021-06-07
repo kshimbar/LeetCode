@@ -1,7 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/kohta/LeetCode/main/SLL.scala:3:36: not found: type SinglyLL[0m
-[0m[[0m[31merror[0m] [0m[0mcase class SinglyLLL(_x:Int, _next:SinglyLL){[0m
-[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/kohta/LeetCode/main/SLL.scala:4:14: not found: type SinglyLL[0m
-[0m[[0m[31merror[0m] [0m[0m    var next:SinglyLL = _next[0m
-[0m[[0m[31merror[0m] [0m[0m             ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/kohta/LeetCode/leetCode.scala:42:5: Missing closing brace `}' assumed here[0m
+[0m[[0m[31merror[0m] [0m[0m    }[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

@@ -22,10 +22,10 @@ object Main extends App{
                 count = count + 1
             }
         }
-        var problemN = util.Random.nextInt(100)
+        var problemN = util.Random.nextInt(400)
         println(problemN)
-        if(count >= 100){
-            println("You did 100 questions!! Well done!!")
+        if(count >= 200){
+            println("You did 200 questions!! Well done!!")
         }else{
             if(solvedArray.contains(problemN)){
                 while(solvedArray.contains(problemN)){
@@ -183,6 +183,31 @@ object Main extends App{
             isPowerOfThree(n/3)
         }
     }
+
+    //test compleated
+    def countBits(n:Int): Array[Int] = {
+        var ret:Array[Int] = Array.fill(n + 1)(0)
+        def helper(n:Int):Array[Int] = {
+            if(n >= 0){
+                var number = 0
+                var count = n.toBinaryString.split("")
+                var i = 0
+                while(i < count.length){
+                    if(count(i) == "1"){
+                        number = number + 1
+                    }
+                    i = i + 1
+                }
+                ret(n) = number
+                helper(n - 1)
+            }else{
+                ret
+            }
+        }
+        helper(n)
+        ret
+    }
+
     //Test space
     problemset()
 }

@@ -208,6 +208,7 @@ object Main extends App{
         ret
     }
 
+    //test compleated
     def missingNumber(nums:Array[Int]):Int = {
         var sum = nums.sum
         var max = nums.max

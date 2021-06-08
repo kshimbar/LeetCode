@@ -208,8 +208,21 @@ object Main extends App{
         ret
     }
 
+    def missingNumber(nums:Array[Int]):Int = {
+        var sum = nums.sum
+        var max = nums.max
+        var idealsum = (max + 1) * max / 2
+        if(sum == idealsum){
+            max + 1
+        }else{
+            var ret = idealsum - sum
+            ret
+        }
+    }
+
     //Test space
-    problemset()
+    var arr = Array(0)
+    println(missingNumber(arr))
 }
     
 

@@ -221,9 +221,151 @@ object Main extends App{
         }
     }
 
+    def mergeManually(num1:Array[Int],num2:Array[Int]):Array[Int] = {
+        var ret:Array[Int] = Array.fill(num1.length + num2.length)(0)
+        var snum1 = num1.sortWith(_ <= _)
+        var snum2 = num2.sortWith(_ <= _)
+        var ind1 = 0
+        var ind2 = 0
+        var indr = 0
+        while(ind1 < snum1.length || ind2 < snum2.length){
+            if(ind1 >= snum1.length){
+                ret(indr) = snum2(ind2)
+                indr += 1
+                ind2 += 1
+            }else if(ind2 >= snum2.length){
+                ret(indr) = snum1(ind1)
+                indr += 1
+                ind1 += 1
+            }else if(snum1(ind1) <= snum2(ind2)){
+                ret(indr) = snum1(ind1)
+                ind1 += 1
+                indr += 1
+            }else if(snum2(ind2) <= snum1(ind1)){
+                ret(indr) = snum2(ind2)
+                ind2 += 1
+                indr += 1
+            }
+        }
+        ret
+    }
+
+    //test compleated
+    def mergeAuto(num1:Array[Int],num2:Array[Int]):Array[Int] = {
+        var ret:Array[Int] = Array.fill(num1.length + num2.length)(0)
+        var length = num1.length
+        var length2 = num2.length
+        if(length > 1 && length2 > 1){
+            for(i <- 0 until length){
+                ret(i) = num1(i)
+            }
+            for(i <- length until ret.length){
+                ret(i) = num2(i - length)
+            }
+            ret = ret.sortWith(_ <= _)
+            ret
+        }else if(length2 > 1){
+            ret = num2.sortWith(_ <= _)
+        }else if(length > 1){
+            ret = num1.sortWith(_ <= _)
+        }else{
+            ret = Array()
+        }
+        ret
+    }
+
+    //prototype
+    def mergeD0P(num1:Array[Int],num2:Array[Int]):Array[Int] = {
+        var num1s = num1.sortWith(_ <= _)
+        var num2s = num2.sortWith(_ <= _)
+        var pos1 = 0
+        var pos2 = 0
+        while(num1s(pos1) == 0){
+            pos1 += 1
+        }
+        while(num2s(pos2) == 0){
+            pos2 += 1
+        }
+        var ret:Array[Int] = Array.fill(num1s.length + num2s.length - pos1 - pos2)(0)
+        if(pos1 != 0 && pos2 != 0){
+            for(i <- 0 until num1s.length - pos1){
+                ret(i) = num1s(i + pos1)
+            }
+            for(i <- num1s.length - pos1 until ret.length){
+                ret(i) = num2s(i - num1s.length + pos2)
+            }
+        }else if(pos1 != 0){
+            if(num2s.length == 0){
+                ret = num1s
+            }else{
+                for(i <- 0 until num2s.length){
+                    ret(i) = num2s(i)
+                }
+                for(i <- num2s.length until ret.length){
+                    ret(i) = num1s(i - num2s.length + pos1)
+                }
+            }
+        }else if(pos2 != 0){
+            if(num1s.length == 0){
+                ret = num2s
+            }else{
+                for(i <- 0 until num1s.length){
+                    ret(i) = num1s(i)
+                }
+                for(i <- num1s.length until ret.length){
+                    ret(i) = num2s(i - num1s.length + pos2)
+                }
+            }
+        }else{
+            if(num1s.length == 0 && num2s.length == 0){
+                ret = Array()
+            }else if(num1s.length == 0){
+                ret = num2s
+            }else if(num2s.length == 0){
+                ret = num1s
+            }else{
+                for(i <- 0 until num1s.length){
+                    ret(i) = num1s(i)
+                }
+                for(i <- num1s.length until ret.length){
+                    ret(i) = num2s(i - num1s.length)
+                }
+            }
+
+        }
+        ret = ret.sortWith(_ <= _)
+        ret
+    }
+    
+    //test compleated
+    def mergeD0(nums1:Array[Int],nums2:Array[Int]):Array[Int] = {
+        var ret1:Array[Int] = nums2 ++ nums1
+        ret1 = ret1.sortWith(_ <= _)
+        var count = 0
+        while(ret1(count) == 0 && count < ret1.length - 1){
+            count += 1
+        }
+        if(ret1(ret1.length - 1) == 0){
+            count += 1
+        }
+        var ret = Array(0)
+        if(ret1.length == count){
+            println("All of the elements are 0. There is nothing in the return array.")
+        }else{
+            ret = Array.fill(ret1.length - count)(0)
+            for(i <- 0 until ret.length){
+                ret(i) = ret1(i + count)
+            }
+        }
+        ret
+    }
+
     //Test space
-    var arr = Array(0)
-    println(missingNumber(arr))
+    var arr1 = Array(0,0)
+    var arr2 = Array(0,8,9,4,6,7)
+    for(i <- 0 until mergeD0(arr1,arr2).length){
+        println(mergeD0(arr1,arr2)(i))
+    }    
 }
     
 

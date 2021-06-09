@@ -1,4 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/kohta/LeetCode/leetCode.scala:42:5: Missing closing brace `}' assumed here[0m
-[0m[[0m[31merror[0m] [0m[0m    }[0m
-[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/kohta/LeetCode/leetCode.scala:375:20: not enough arguments for method mergeD0: (nums1: Array[Int], nums2: Array[Int])Array[Int].[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter nums2.[0m
+[0m[[0m[31merror[0m] [0m[0m    println(mergeD0(0))[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

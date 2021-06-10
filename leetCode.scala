@@ -393,8 +393,29 @@ object Main extends App{
         }
     }
 
+    //test compleated
+    def isHappy(n:Int):Boolean = {
+        var numbers = List(0)
+        def helper(x:Int):Boolean = {
+            var narr = x.toString.split("")
+            var sum = 0
+            for(i <- 0 until narr.length){
+                sum = narr(i).toInt*narr(i).toInt + sum
+            }
+            if(sum == 1){
+                true
+            }else if(numbers.contains(sum)){
+                false
+            }else{
+                numbers = sum :: numbers
+                helper(sum)
+            }
+        }
+        helper(n)
+    }
+
     //Test space
-    println(myPow(2.00000,-2))
+    
 }
     
 

@@ -360,12 +360,41 @@ object Main extends App{
         ret
     }
 
+    //test compleated
+    def po4(n:Int) : Boolean = {
+        var res = n % 4
+        if(n == 1){
+            true
+        }else if(res == 0){
+            po4(n / 4)
+        }else{
+            false
+        }
+    }
+
+    //test compleated
+    def myPow(x:Double, n:Int) : Double = {
+        def helperp(data:Double,times:Int):Double = {
+            if(times == 0){
+                1
+            }else if(times == 1){
+                data
+            }else{
+                helperp(data*x,times - 1)
+            }
+        }
+        def helpern(data:Double,times:Int):Double = {
+            1 / helperp(data,-1 * times)
+        }
+        if(n >= 0){
+            helperp(x,n)
+        }else{
+            helpern(x,n)
+        }
+    }
+
     //Test space
-    var arr1 = Array(0,0)
-    var arr2 = Array(0,8,9,4,6,7)
-    for(i <- 0 until mergeD0(arr1,arr2).length){
-        println(mergeD0(arr1,arr2)(i))
-    }    
+    println(myPow(2.00000,-2))
 }
     
 

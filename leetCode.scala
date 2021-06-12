@@ -440,8 +440,42 @@ object Main extends App{
         helper(head,tail)
     }
 
+    //test compleated
+    def searchInsert(nums:Array[Int], trg:Int):Int = {
+        var snum = nums.sortWith(_<_)
+        var len = nums.length
+        def find(ind:Int, pre:Int):Int = {
+            if(ind == len - 1){
+                if(len == 2){
+                    if(nums(0) > trg){
+                        0
+                    }else if(nums(ind) < trg){
+                        2
+                    }else 1
+                }else len
+            }else if(nums(ind) < trg && trg < nums(ind+1)){
+                ind + 1
+            }else if(nums(len - 1)< trg){
+                len
+            }else if(nums(0) > trg){
+                0
+            }else if(trg < nums(ind)){
+                find(ind/2,ind)
+            }else{
+                find((pre - ind)/2+ind,ind)
+            }
+        }
+        if(trg == 0){
+            0
+        }else if(nums.contains(trg)){
+            snum.indexOf(trg)
+        }else{
+            find(len/2,len)
+        }
+    }
+
     //Test space
-    println(isPalindrome("Koh1o K"))
+    problemset()
 }
     
 

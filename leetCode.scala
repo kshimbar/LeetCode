@@ -414,8 +414,33 @@ object Main extends App{
         helper(n)
     }
 
+ def isPalindrome(s:String):Boolean = {
+        var letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        var arrStr = s.split("")
+        var head = 0
+        var tail = arrStr.length - 1
+        def helper(h:Int, t:Int): Boolean = {
+            if(h >= t){
+                true
+            }else if(letters.contains(arrStr(h)) && letters.contains(arrStr(t))){
+                if(arrStr(h) == arrStr(t)){
+                    helper(h+1,t-1)
+                }else{
+                    false
+                }
+            }else if(letters.contains(arrStr(h))){
+                helper(h,t-1)
+            }else if(letters.contains(arrStr(t))){
+                helper(h+1,t)
+            }else{
+                helper(h+1,t-1)
+            }
+        }
+        helper(head,tail)
+    }
+
     //Test space
-    
+    println(isPalindrome("Koh1o K"))
 }
     
 

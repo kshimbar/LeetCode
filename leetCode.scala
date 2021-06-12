@@ -414,7 +414,8 @@ object Main extends App{
         helper(n)
     }
 
- def isPalindrome(s:String):Boolean = {
+    //test compleated
+    def isPalindrome(s:String):Boolean = {
         var letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         var arrStr = s.split("")
         var head = 0

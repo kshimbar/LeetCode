@@ -7,14 +7,10 @@ object Main extends App{
     
     def problemset():Unit = {
         val filename = "solved.txt"
-        var solvedArray:Array[Int] = Array.fill(100)(-1)
+        var solvedArray = List(-1)
         for(line <- scala.io.Source.fromFile(filename).getLines()){
-            var solved = line.split(" ")
+            solvedArray = line.split(" ").toList.map(_.toInt)
             var i = 0
-            while(i < solved.length){
-                solvedArray(i) = solved(i).toInt
-                i = i + 1
-            }
         }
         var count = 0
         for(z <- 0 to solvedArray.length - 1){
@@ -29,7 +25,7 @@ object Main extends App{
         }else{
             if(solvedArray.contains(problemN)){
                 while(solvedArray.contains(problemN)){
-                    problemN = util.Random.nextInt(100)
+                    problemN = util.Random.nextInt(400)
                 }
             }
             println("The problem you will solve next is " + problemN)
@@ -40,6 +36,27 @@ object Main extends App{
                 }
             }
             pw.print(problemN)
+            pw.close()
+            pw.flush()
+        }
+    }
+
+    def problemCheck(n:Int):Unit = {
+        val filename = "solved.txt"
+        var solvedArray = List(0)
+        for(line <- scala.io.Source.fromFile(filename).getLines()){
+            solvedArray = line.split(" ").toList.map(_.toInt)
+            var i = 0
+        }
+        if(solvedArray.contains(n)){
+            problemset()
+        }else{
+            println("The problem you will solve next is " + n)
+            val pw = new PrintWriter("solved.txt")
+            for(i <- 0 to solvedArray.length - 1){
+                pw.print(solvedArray(i) + " ")
+            }
+            pw.print(n)
             pw.close()
             pw.flush()
         }
@@ -491,7 +508,7 @@ object Main extends App{
 
 
     //Test space
-    
+    problemCheck(100)
 }
     
 

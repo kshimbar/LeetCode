@@ -474,8 +474,24 @@ object Main extends App{
         }
     }
 
+    //test compleated
+    def addDigit(n:Int):Int = {
+        if(n > 9){
+            var dig = n.toString().split("")
+            var intarr = Array.fill(dig.length)(0)
+            for(i <- 0 until dig.length){
+                intarr(i) = dig(i).toInt
+            }
+            addDigit(intarr.sum)
+        }else{
+            n
+        }
+    }
+
+
+
     //Test space
-    problemset()
+    
 }
     
 

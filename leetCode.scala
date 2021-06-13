@@ -61,6 +61,7 @@ object Main extends App{
             pw.flush()
         }
     }
+
     //Test compleated.
     def twoSum(nums: Array[Int], target: Int): Unit = {
         var i = 0
@@ -191,6 +192,7 @@ object Main extends App{
         }
     }
 
+    //test compleated
     def isPowerOfThree(n:Int): Boolean = {
         if(n == 3){
             true
@@ -505,10 +507,33 @@ object Main extends App{
         }
     }
 
+    def generate(row:Int):List[List[Int]] = {
+        var ret = List(List(1,1),List(1))
+        if(row == 1){
+            List(List(1))
+        }else if(row == 2){
+            ret.reverse
+        }else{
+            for(i <- 3 until row + 1){
+                var newList = Array.fill(i)(1)
+                for(n <- 1 until newList.length - 1){
+                    newList(n) = ret(i - 2)(n - 1) + ret(i - 2)(n)
+                }
+                ret = newList.toList :: ret
+            }
+            ret.reverse
+        }
+    }
 
+    def factors(num:Int):List[Int] = {
+        (1 to num).filter { divisor =>
+            num % divisor == 0
+        }.toList
+    }
 
+    
     //Test space
-    problemCheck(100)
+    
 }
     
 

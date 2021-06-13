@@ -1,5 +1,9 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/kohta/LeetCode/leetCode.scala:375:20: not enough arguments for method mergeD0: (nums1: Array[Int], nums2: Array[Int])Array[Int].[0m
-[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter nums2.[0m
-[0m[[0m[31merror[0m] [0m[0m    println(mergeD0(0))[0m
-[0m[[0m[31merror[0m] [0m[0m                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/kohta/LeetCode/leetCode.scala:529:15: not found: value sqrt[0m
+[0m[[0m[31merror[0m] [0m[0m        (1 to sqrt(num)).filter { divisor =>[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/kohta/LeetCode/leetCode.scala:534:26: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
+[0m[[0m[31merror[0m] [0m[0m required: Int[0m
+[0m[[0m[31merror[0m] [0m[0m    def res(a:Int):Int = {[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

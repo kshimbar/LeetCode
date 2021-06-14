@@ -19,7 +19,6 @@ object Main extends App{
             }
         }
         var problemN = util.Random.nextInt(400)
-        println(problemN)
         if(count >= 200){
             println("You did 200 questions!! Well done!!")
         }else{
@@ -51,7 +50,7 @@ object Main extends App{
         if(solvedArray.contains(n)){
             problemset()
         }else{
-            println("The problem you will solve next is " + n)
+            println("You can solve the problem " + n)
             val pw = new PrintWriter("solved.txt")
             for(i <- 0 to solvedArray.length - 1){
                 pw.print(solvedArray(i) + " ")
@@ -531,6 +530,27 @@ object Main extends App{
         }.toList
     }
 
+    //test compleated
+    def myReverse(x:Int):Int = {
+        var ret = 0
+        if(x < 0){
+            var mx = -1 * x
+            var intList = mx.toString().split("").toList.map(_.toInt)
+            for(i <- 0 until intList.length){
+                ret = (myPow(10,i) * intList(i)).toInt + ret
+            }
+            ret = ret * -1
+        }else{
+            var intList = x.toString().split("").toList.map(_.toInt)
+            for(i <- 0 until intList.length){
+                ret = (myPow(10,i) * intList(i)).toInt + ret
+            }
+        }
+        if(ret < -myPow(2,31) || ret > myPow(2,31)){
+            ret = 0
+        }
+        ret
+    }
     
     //Test space
     

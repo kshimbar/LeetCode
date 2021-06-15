@@ -546,9 +546,6 @@ object Main extends App{
                 ret = (myPow(10,i) * intList(i)).toInt + ret
             }
         }
-        if(ret < -myPow(2,31) || ret > myPow(2,31)){
-            ret = 0
-        }
         ret
     }
     

@@ -549,6 +549,21 @@ object Main extends App{
         ret
     }
     
+    //test compleated
+    def moveZeroes(num:Int):List[Int] = {
+        var numL = num.toString().split("").toList.map(_.toInt).toArray
+        var count = 0
+        for(i <- 0 until numL.length){
+            if(numL(i) == 0){
+                count += 1
+            }
+        }
+        var newL = numL.filter(_ != 0).toList.reverse
+        for(i <- 0 until count){
+            newL = 0 :: newL
+        }
+        newL.reverse
+    }
     //Test space
     
 }

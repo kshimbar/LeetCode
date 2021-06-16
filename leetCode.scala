@@ -564,6 +564,35 @@ object Main extends App{
         }
         newL.reverse
     }
+
+    def wordPattern(pat:String,s:String): Boolean = {
+        var patA = pat.split("")
+        var str = s.split(" ")
+        var ret = true
+        if(patA.length != str.length){
+            ret = false
+        }else if(patA.length == 1){
+            ret = true
+        }else{
+            var count1 = 0
+            var count2 = 1
+            while(count1 < patA.length && ret){
+                while(count1 < count2 && count2 < str.length && ret){
+                    if(patA(count1) == patA(count2) && str(count1) == str(count2)){
+                        ret = true
+                    }else if(patA(count1) != patA(count2) && str(count1) != str(count2)){
+                        ret = true
+                    }else{
+                        ret = false
+                    }
+                    count2 = count2 + 1
+                }
+                count1 = count1 + 1
+                count2 = count1 + 1
+            }
+        }
+        ret
+    }
     //Test space
     
 }

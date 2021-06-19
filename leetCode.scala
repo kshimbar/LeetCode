@@ -593,7 +593,23 @@ object Main extends App{
         }
         ret
     }
+
+    ///test compleated
+    def reversString(s:String):String = {
+        s.reverse
+    }
+
+    def commonStr(s:Array[String]):String = {
+        var arrSs:List[List[String]] = List()
+        for(i <- 0 until s.length){
+            var arr = s(i).split("").toList
+            arrSs = arr :: arrSs
+        }
+        var count = 0
+        "s"
+    }
     //Test space
+    commonStr(Array("koh","kot"))
     
 }
     

@@ -2,6 +2,7 @@ package leetCode
 
 import java.io.PrintWriter
 import javax.xml.transform.Source
+import scala.collection.mutable.ArrayBuffer
 
 object Main extends App{
     
@@ -605,11 +606,22 @@ object Main extends App{
         }
     }
 
+    //test compleated
+    def singleNumber(n:Array[Int]):Int = {
+        var set:ArrayBuffer[Int] = ArrayBuffer()
+        for(i <- 0 until n.length){
+            if(set.contains(n(i))){
+                set -= n(i)
+            }else{
+                set += n(i)
+            }
+        }
+        set(0)
+    }
 
 
     
     //Test space
-    isAnagram("kohta","hokt")
 }
     
 

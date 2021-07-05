@@ -619,9 +619,40 @@ object Main extends App{
         set(0)
     }
 
+    // test compleated
+    def isPerfectSquare(n:Int):Boolean = {
+        var ret = false
+        var itr = true
+        var i = 0
+        while(itr){
+            var check = i * i
+            if(check == n){
+                itr = false
+                ret = true
+            }else if(check > n){
+                itr = false
+                ret = false
+            }else{
+                i = i + 1
+            }
+        }
+        ret
+    }
 
+    def numberOf1Bit(n:Int):Int = {
+        var dig = n.toBinaryString.split("").toList.map(_.toInt)
+        var count = 0
+        for(i <- 0 until dig.length){
+            if(dig(i) == 1){
+                count += 1
+            }
+        }
+        count
+    }
+    
     
     //Test space
+    
 }
     
 

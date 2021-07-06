@@ -650,8 +650,9 @@ object Main extends App{
         }
         count
     }
-
-    def intersect(num1:Array[Int],num2:Array[Int]):List[Int] = {
+    
+    //test compleated
+    def intersect(num1:Array[Int],num2:Array[Int]):Array[Int] = {
         var nums1 = num1.sortWith(_ > _).to[ArrayBuffer]
         var nums2 = num2.sortWith(_ > _).to[ArrayBuffer]
         var ret:List[Int] = List()
@@ -665,11 +666,11 @@ object Main extends App{
                 i = i + 1
             }
         }
-        ret
+        ret.toArray
     }
 
     //Test space
-    println(intersect(Array(1,2,3),Array(2,3,4)))
+    
 }
     
 

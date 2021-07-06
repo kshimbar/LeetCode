@@ -639,6 +639,7 @@ object Main extends App{
         ret
     }
 
+    //test compleated
     def numberOf1Bit(n:Int):Int = {
         var dig = n.toBinaryString.split("").toList.map(_.toInt)
         var count = 0
@@ -649,10 +650,26 @@ object Main extends App{
         }
         count
     }
-    
-    
+
+    def intersect(num1:Array[Int],num2:Array[Int]):List[Int] = {
+        var nums1 = num1.sortWith(_ > _).to[ArrayBuffer]
+        var nums2 = num2.sortWith(_ > _).to[ArrayBuffer]
+        var ret:List[Int] = List()
+        var i = 0
+        while(i < nums1.length){
+            if(nums2.contains(nums1(i))){
+                ret = nums1(i) :: ret
+                nums2 = nums2 - nums1(i)
+                i = i + 1
+            }else{
+                i = i + 1
+            }
+        }
+        ret
+    }
+
     //Test space
-    
+    println(intersect(Array(1,2,3),Array(2,3,4)))
 }
     
 

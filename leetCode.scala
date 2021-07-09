@@ -669,8 +669,40 @@ object Main extends App{
         ret.toArray
     }
 
+    def collatz(nums:Array[Int]):List[Int] = {
+        var itr = 0
+        var ret:List[Int] = List()
+        for(i <- 0 until nums.length){
+            itr = nums(i)
+            var times = 0
+            while(times <= 500){
+                times = times + 1
+                if(itr == 1){
+
+                }else if(itr % 2 == 0){
+                    itr = itr / 2
+                }else{
+                    itr = itr * 3 + 1
+                }
+            }
+            if(times == 500){
+                println(nums(i))
+            }
+            ret = times :: ret
+        }
+        //comment: Printing iteration time
+        // println("times that itterates")
+        // var result = ret.reverse
+        // for(n <- 0 until result.length){
+        //     println(nums(n) + ": " + result(n))
+        // }
+        // result
+        ret
+    }
+
     //Test space
-    
+    var a = (200000 to 100000000).toArray
+    collatz(a)
 }
     
 

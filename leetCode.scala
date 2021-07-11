@@ -669,9 +669,8 @@ object Main extends App{
         ret.toArray
     }
 
-    def collatz(nums:Array[Int]):List[Int] = {
+    def collatz(nums:Array[Int]):Unit = {
         var itr = 0
-        var ret:List[Int] = List()
         for(i <- 0 until nums.length){
             itr = nums(i)
             var times = 0
@@ -688,7 +687,6 @@ object Main extends App{
             if(times == 500){
                 println(nums(i))
             }
-            ret = times :: ret
         }
         //comment: Printing iteration time
         // println("times that itterates")
@@ -697,12 +695,168 @@ object Main extends App{
         //     println(nums(n) + ": " + result(n))
         // }
         // result
-        ret
+    }
+
+    def make10(nums:List[Int]):Boolean = {
+        var ret:List[Int] = List()
+        if(nums.length == 1){
+            false
+        }else if(nums.length == 2){
+            if(nums.sum == 10){
+                true
+            }else if(nums(0)*nums(1) == 10){
+                true
+            }else{
+                false
+            }
+        }else if(nums.length == 3){
+            val f = nums(0)
+            var s = nums(1)
+            var t = nums(2)
+            //012
+            var su01 = f + s
+            var ne01 = f - s
+            var mu01 = f * s
+            var de01 = 0
+            if(f % s == 0 && s != 0 ){
+                de01 = f / s
+            }
+            val res01 = List(su01,ne01,mu01,de01)
+            for(i <- 0 until res01.length){
+                var y = res01(i)
+                var res = y + t
+                ret = res :: ret
+                res = y - t
+                ret = res :: ret
+                res = y * t
+                ret = res :: ret
+                if(y % t == 0 && t != 0){
+                    res = y / t
+                    ret = res :: ret
+                }
+            }
+            //021
+            var su02 = f + t
+            var ne02 = f - t
+            var mu02 = f * t
+            var de02 = 0
+            if(f % t == 0 && t != 0){
+                de01 = f / t
+            }
+            val res02 = List(su02,ne02,mu02,de02)
+            for(i <- 0 until res02.length){
+                var y = res02(i)
+                var res = y + s
+                ret = res :: ret
+                res = y - s
+                ret = res :: ret
+                res = y * s
+                ret = res :: ret
+                if(y % s == 0 && s != 0){
+                    res = y / s
+                    ret = res :: ret
+                }
+            }
+            //102
+            var su10 = f + s
+            var ne10 = s - f
+            var mu10 = f * s
+            var de10 = 0
+            if(s % f == 0 && f != 0){
+                de10 = s / f
+            }
+            val res10 = List(su10,ne10,mu10,de10)
+            for(i <- 0 until res10.length){
+                var y = res10(i)
+                var res = y + t
+                ret = res :: ret
+                res = y - t
+                ret = res :: ret
+                res = y * t
+                ret = res :: ret
+                if(y % t == 0 && t != 0){
+                    res = y / t
+                    ret = res :: ret
+                }
+            }
+            //120
+            var su12 = s + t
+            var ne12 = s - t
+            var mu12 = s * t
+            var de12 = 0
+            if(s % t == 0 && t != 0){
+                de12 = s / t
+            }
+            val res12 = List(su12,ne12,mu12,de12)
+            for(i <- 0 until res12.length){
+                var y = res12(i)
+                var res = y + f
+                ret = res :: ret
+                res = y - f
+                ret = res :: ret
+                res = y * f
+                ret = res :: ret
+                if(y % f == 0 && f != 0){
+                    res = y / f
+                    ret = res :: ret
+                }
+            }
+            //201
+            var su20 = t + f
+            var ne20 = t - f
+            var mu20 = t * f
+            var de20 = 0
+            if(t % f == 0 && f != 0){
+                de20 = t / f
+            }
+            val res20 = List(su20,ne20,mu20,de20)
+            for(i <- 0 until res20.length){
+                var y = res20(i)
+                var res = y + s
+                ret = res :: ret
+                res = y - s
+                ret = res :: ret
+                res = y * s
+                ret = res :: ret
+                if(y % s == 0 && s != 0){
+                    res = y / s
+                    ret = res :: ret
+                }
+            }
+            //210
+            var su21 = t + s
+            var ne21 = t - s
+            var mu21 = t * s
+            var de21 = 0
+            if(t % s == 0 && s != 0){
+                de21 = t / s
+            }
+            val res21 = List(su21,ne21,mu21,de21)
+            for(i <- 0 until res21.length){
+                var y = res21(i)
+                var res = y + f
+                ret = res :: ret
+                res = y - f
+                ret = res :: ret
+                res = y * f
+                ret = res :: ret
+                if(y % f == 0 && f != 0){
+                    res = y / f
+                    ret = res :: ret
+                }
+            }
+            if(ret.contains(10)){
+                true
+            }else{
+                false
+            }
+        }else{
+            true
+        }
     }
 
     //Test space
-    var a = (200000 to 100000000).toArray
-    collatz(a)
+    println(make10(List(1,2,3)))
 }
     
 

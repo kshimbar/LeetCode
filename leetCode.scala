@@ -855,6 +855,7 @@ object Main extends App{
         }
     }
 
+    //test compleated
     def canConstruct(r:String, m:String):Boolean = {
         var arrbr = r.split("").to[ArrayBuffer]
         var arrbm = m.split("").to[ArrayBuffer]

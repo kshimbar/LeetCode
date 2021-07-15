@@ -872,7 +872,7 @@ object Main extends App{
     }
     
     //Test space
-    println(canConstruct("aa","ab"))
+    
 }
     
 

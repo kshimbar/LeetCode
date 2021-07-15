@@ -851,12 +851,28 @@ object Main extends App{
                 false
             }
         }else{
-            true
+            true   
         }
     }
 
+    def canConstruct(r:String, m:String):Boolean = {
+        var arrbr = r.split("").to[ArrayBuffer]
+        var arrbm = m.split("").to[ArrayBuffer]
+        var ret = true
+        var count = 0
+        while(count < arrbr.length && ret){
+            if(arrbm.contains(arrbr(count))){
+                arrbm = arrbm - arrbr(count)
+                count += 1
+            }else{
+                ret = false
+            }
+        }
+        ret
+    }
+    
     //Test space
-    println(make10(List(1,2,3)))
+    println(canConstruct("aa","ab"))
 }
     
 

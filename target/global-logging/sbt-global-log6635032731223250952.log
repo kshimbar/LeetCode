@@ -1,0 +1,6 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(3537d0d8-8b09-4603-b3ee-919218dc8589), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: bloop.integrations.sbt.Offloader$$anon$1@5e6522a6, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /Users/kohta/LeetCode/target/scala-2.12/classes ...[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 1 s, completed Jul 15, 2021, 6:34:14 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

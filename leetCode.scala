@@ -19,7 +19,7 @@ object Main extends App{
                 count = count + 1
             }
         }
-        var problemN = util.Random.nextInt(400)
+        var problemN = util.Random.nextInt(500)
         if(count >= 200){
             println("You did 200 questions!! Well done!!")
         }else{
@@ -871,9 +871,42 @@ object Main extends App{
         }
         ret
     }
+
+    //test compleated
+    def subSequence(r:String, m:String):Boolean = {
+        var arrbr = r.split("").to[ArrayBuffer]
+        var arrbm = m.split("").to[ArrayBuffer]
+        var ret = true
+        var count = 0
+        while(count < arrbr.length && ret){
+            if(arrbm.contains(arrbr(count))){
+                arrbm = arrbm - arrbr(count)
+                count += 1
+            }else{
+                ret = false
+            }
+        }
+        ret
+    }
     
+    def deleteDuplicated(head:ListNode):ListNode = {
+        var itr:ListNode = null
+        var cur:ListNode = head
+        while(cur != null && cur.next != null){
+            if(cur.next.x == cur.x){
+                cur.next = cur.next.next
+            }else{
+                cur = cur.next
+            }
+        }
+        head
+    }
     //Test space
-    
+}
+
+class ListNode(_x:Int = 0, _next:ListNode = null){
+    var next:ListNode = _next
+    var x:Int = _x
 }
     
 

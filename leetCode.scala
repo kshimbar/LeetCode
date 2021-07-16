@@ -902,6 +902,25 @@ object Main extends App{
         }
         head
     }
+
+    //test compleated on LeetCode
+    def hasCycle(head:ListNode):Boolean = {
+        var walker:ListNode = head
+        var runner:ListNode = head
+        if(head == null){
+            return false
+        }else{
+            while(runner.next != null && runner.next.next != null){
+                runner = runner.next.next
+                walker = walker.next
+                if(runner == walker){
+                    return true
+                }
+            }
+            return false
+        }
+    }
+    
     //Test space
 }
 

@@ -889,6 +889,7 @@ object Main extends App{
         ret
     }
     
+    //test compleated
     def deleteDuplicated(head:ListNode):ListNode = {
         var itr:ListNode = null
         var cur:ListNode = head

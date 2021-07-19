@@ -920,8 +920,63 @@ object Main extends App{
             return false
         }
     }
-    
+
+    //test compleated
+    def isVlaidSudoku(board:Array[Array[String]]):Boolean = {
+        var col:List[List[String]] = List()
+        var list = List("1","2","3","4","5","6","7","8","9")
+        for(i <- 0 until 9){
+            var coll:List[String] = List()
+            for(n <- 0 until 9){
+                coll = board(n)(i) :: coll
+            }
+            col = coll :: col
+        }
+        var countr = 0
+        var countc = 0
+        while(countr < 9){
+            while(countc < 9){
+                var itr = 0
+                while(itr < 9){
+                    if(board(countr)(countc) == board(countr)(itr) && itr != countc && list.contains(board(countr)(countc))){
+                        return false
+                    }
+                    itr += 1
+                }
+                countc += 1
+            }
+            countr += 1
+        }
+        countc = 0
+        countr = 0
+        while(countc < 9){
+            while(countr < 9){
+                var itr = 0
+                while(itr < 9){
+                    if(col(countc)(countr) == col(countc)(itr) && countr != itr && list.contains(col(countc)(countr))){
+                        return false
+                    }
+                    itr += 1
+                }
+                countr += 1
+            }
+            countc += 1
+        }
+        println(true)
+        true
+    }
     //Test space
+    var list = Array(
+    Array("5","3",".",".","7",".",".",".","."),
+    Array("6",".",".","1","9","5",".",".","."),
+    Array(".","9","8",".",".",".",".","6","."),
+    Array("8",".",".",".","6",".",".",".","3"),
+    Array("4",".",".","8",".","3",".",".","1"),
+    Array("7",".",".",".","2",".",".",".","6"),
+    Array(".","6",".",".",".",".","2","8","."),
+    Array(".",".",".","4","1","9",".",".","5"),
+    Array(".",".",".",".","8",".",".","7","9"))
+    isVlaidSudoku(list)
 }
 
 class ListNode(_x:Int = 0, _next:ListNode = null){

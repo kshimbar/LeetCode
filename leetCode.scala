@@ -965,18 +965,29 @@ object Main extends App{
         println(true)
         true
     }
+
+    //testing status
+    def wordsCount(str:String):Unit = {
+        var wordsArray = str.split("[ .\n]").to[ArrayBuffer]
+        var done:List[String] = List()
+        for(i <- 0 until wordsArray.length){
+            if(!done.contains(wordsArray(i)) && wordsArray(i) != " "){
+                var count = 0
+                for(n <- 0 until wordsArray.length){
+                    if(wordsArray(i) == wordsArray(n)){
+                        count += 1
+                    }
+                }
+                if(wordsArray(i) != "" && wordsArray(i) != "\n"){
+                    println(wordsArray(i) + "\t: " + count + " words")
+                }
+                done = wordsArray(i) :: done
+            }
+        }
+    }
+
     //Test space
-    var list = Array(
-    Array("5","3",".",".","7",".",".",".","."),
-    Array("6",".",".","1","9","5",".",".","."),
-    Array(".","9","8",".",".",".",".","6","."),
-    Array("8",".",".",".","6",".",".",".","3"),
-    Array("4",".",".","8",".","3",".",".","1"),
-    Array("7",".",".",".","2",".",".",".","6"),
-    Array(".","6",".",".",".",".","2","8","."),
-    Array(".",".",".","4","1","9",".",".","5"),
-    Array(".",".",".",".","8",".",".","7","9"))
-    isVlaidSudoku(list)
+    
 }
 
 class ListNode(_x:Int = 0, _next:ListNode = null){

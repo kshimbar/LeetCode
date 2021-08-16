@@ -1,4 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/kohta/LeetCode/leetCode.scala:593:36: value \ is not a member of Int[0m
-[0m[[0m[31merror[0m] [0m[0m                count1 = count1 + 1\[0m
-[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/kohta/LeetCode/leetCode.scala:1009:20: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
+[0m[[0m[31merror[0m] [0m[0m required: String[0m
+[0m[[0m[31merror[0m] [0m[0m            println("The int is too large to convert. Try again.")[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

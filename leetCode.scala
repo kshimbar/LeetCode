@@ -962,7 +962,6 @@ object Main extends App{
             }
             countc += 1
         }
-        println(true)
         true
     }
 
@@ -985,8 +984,101 @@ object Main extends App{
             }
         }
     }
+
+    def numSquares(n:Int): Int = {
+        def findMaxSquare(a:Int):Int = {
+            var b = 0
+            while(b * b < a){
+                b += 1
+            }
+            b - 1
+        }
+        def helper(c:Int,itr:Int):Int = {
+            if(isPerfectSquare(c)){
+                itr
+            }else{
+                var p2 = findMaxSquare(c)
+                Math.min(helper(c - p2*p2,itr + 1),helper(c - (p2-1)*(p2-1), itr + 1))
+            }
+        }
+        helper(n,1)
+    }
+
+    def intToRoman(i:Int):String = {
+        if(i > 3999){
+            println("The int is too large to convert. Try again.")
+            "TRY AGAIN"
+        }else{
+            var ret = ""
+            var countm = i / 1000
+            var resm = i % 1000
+            for(i <- 0 until countm){
+                ret = ret + "M"
+            }
+            var resd = 0
+            if(resm >= 900){
+                ret = ret + "CM"
+                resd = resm / 900
+            }else if(resm >= 500){
+                ret = ret + "D"
+                resd = resm / 500
+                var countc = resd / 100
+                resd = resd % 100
+                for(i <- 0 until countc){
+                    ret = ret + "C"
+                }
+            }else if(resm >= 400){
+                ret = ret + "CD"
+                resd = resm % 400
+            }else{
+                var countc = resm / 100
+                resd = resm % 100
+                for(i <- 0 until countc){
+                    ret = ret + "C"
+                }
+            }
+            var resc = 0
+            if(resd >= 90){
+                ret = ret + "XC"
+                resc = resd % 90
+            }else if(resd >= 50){
+                ret = ret + "L"
+                resc = resd % 50
+                var countx = resc / 10
+                resc = resc % 10
+                for(i <- 0 until countx){
+                    ret = ret + "X"
+                }
+            }else if(resd >= 40){
+                ret = ret + "XL"
+                resc = resd % 40
+            }else{
+                var countx = resd / 10
+                resc = resd % 10
+                for(i <- 0 until countx){
+                    ret = ret + "X"
+                }
+            }
+            if(resc == 9){
+                ret = ret + "IX"
+            }else if(resc >= 5){
+                var resi = resc % 5
+                ret = ret + "V"
+                for(i <- 0 until resi){
+                    ret = ret + "I"
+                }
+            }else if(resc == 4){
+                ret = ret + "IV"
+            }else{
+                for(i <- 0 until resc){
+                    ret = ret + "I"
+                }
+            }
+            ret
+        }
+    }
     //Test space
-    
+    println(intToRoman(494))
 }
 
 class ListNode(_x:Int = 0, _next:ListNode = null){
